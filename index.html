@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Editor</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#DDD8C4] text-[#253031] md:text-lg font-medium h-screen flex flex-col">
+    <header class="h-12 md:h-14 flex justify-center items-center bg-gray-800 text-[#F0F7F4]">
+        <nav class="w-full max-w-screen-lg mx-auto flex justify-center items-center md:justify-between md:px-8">
+            <h1 class="text-base md:text-xl font-bold">MARKDOWN EDITOR</h1>
+            <!-- BUTTONS TABLET AND DESKTOP -->
+            <div class="hidden md:flex space-x-2">
+                <!-- PREVIEW BUTTON-->
+                <button class="preview-button px-3 py-1 bg-gray-800 rounded text-[#F0F7F4] hover:bg-gray-700 border border-[#DDD8C4] cursor-pointer">Preview</button>
+                <!-- ENFASIS BUTTON-->
+                <button class="emphasis-button px-3 py-1 bg-gray-800 rounded text-[#F0F7F4] hover:bg-red-500 border border-[#DDD8C4] cursor-pointer">Emphasis</button>
+            </div>
+        </nav>
+    </header>
+    <main class="font-mono px-2 md:px-8 flex-1 overflow-auto">
+        <article class="h-full lg:flex lg:space-x-4">
+            <!-- Contenedor del editor -->
+            <section class="h-1/2 lg:h-full flex-1">
+                <h2 class="text-lg font-semibold py-2 text-center lg:text-left">Code</h2>
+                <!-- Area de text -->
+                <textarea id="markdown-input" class="w-full h-85 lg:h-9/10 p-2 rounded resize-none bg-[#F0F7F4]" placeholder="Write Markdown here..."></textarea>
+            </section>
+            <!-- Contenedor de la vista previa -->
+            <section class="h-1/2 lg:h-full flex-1">
+                <h2 class="text-lg font-semibold py-2 text-center lg:text-left">Preview</h2>
+                <div id="html-output" class="w-full h-95 lg:h-9/10 p-2 rounded overflow-auto bg-[#F0F7F4]"></div>
+            </section>
+        </article>
+        <!-- BUTTONS MOBILE-->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 md:hidden flex space-x-1">
+            <!-- PREVIEW BUTTON-->
+            <button class="preview-button px-3 py-1 bg-gray-800 rounded-l-full text-[#F0F7F4] hover:bg-gray-700 shadow-lg shadow-gray-600 cursor-pointer">Preview</button>
+            <!-- ENFASIS BUTTON-->
+            <button class="emphasis-button px-3 py-1 bg-gray-800 rounded-r-full text-[#F0F7F4] hover:bg-red-500 shadow-lg shadow-gray-600 cursor-pointer">Emphasis</button>
+        </div>
+    </main>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
